@@ -13,16 +13,18 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^2.6.0",
+    "body-parser": "^1.18.3",
     "cross-env": "^5.2.0",
     "element-ui": "^2.4.11",
     "express": "^4.16.4",
+    "express-session": "^1.15.6",
     "nuxt": "^2.4.0",
     "vue-i18n": "^8.8.2"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9",
     "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-prettier": "2.6.2",
+    "nodemon": "^1.18.9",
     "prettier": "1.14.3"
   }
 }

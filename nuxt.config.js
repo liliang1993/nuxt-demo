@@ -1,5 +1,6 @@
 const pkg = require('./package')
-
+const bodyParser = require('body-parser')
+const session = require('express-session')
 
 module.exports = {
   mode: 'universal',
@@ -18,6 +19,17 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+
+  serverMiddleware: [
+    bodyParser.json(),
+    session({
+      secret: 'super-secret-key',
+      resave: false,
+      saveUninitialized: false,
+      cookie: { maxAge: 60000 }
+    }),
+    '~/api'
+  ],
 
   /*
   ** Customize the progress-bar color
@@ -67,6 +79,17 @@ module.exports = {
     */
     extend(config, ctx) {
       
+    },
+    
+    postcss: {
+      // Add plugin names as key and arguments as value
+      // Install them before as dependencies with npm or yarn
+      preset: {
+        // Change the postcss-preset-env settings
+        autoprefixer: {
+          browsers: ['Android >= 4.0', 'iOS >= 7']
+        }
+      }
     }
   }
 }
