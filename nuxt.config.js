@@ -41,6 +41,7 @@ module.exports = {
   */
   css: [
     // 'element-ui/lib/theme-chalk/index.css'
+    '~/styles/reset.css'
   ],
 
   router: {
@@ -50,7 +51,9 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/i18n.js'
+    '~/plugins/i18n.js',
+    '~/plugins/route.js',
+    '~/plugins/element-ui.js'
   ],
 
   /*
@@ -73,7 +76,21 @@ module.exports = {
   */
   build: {
     transpile: [/^element-ui/],
-    
+    vendor: [
+        'element-ui'
+    ],
+    babel: {
+      'plugins': [
+        [
+          'component',
+          {
+            'libraryName': 'element-ui',
+            'styleLibraryName': 'theme-chalk'
+          }
+        ]
+      ],
+      'comments': true
+    },
     /*
     ** You can extend webpack config here
     */

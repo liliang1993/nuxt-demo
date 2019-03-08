@@ -18,10 +18,12 @@
     "element-ui": "^2.4.11",
     "express": "^4.16.4",
     "express-session": "^1.15.6",
+    "normalize.css": "^8.0.1",
     "nuxt": "^2.4.0",
     "vue-i18n": "^8.8.2"
   },
   "devDependencies": {
+    "babel-plugin-component": "^1.1.1",
     "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-prettier": "2.6.2",
     "nodemon": "^1.18.9",

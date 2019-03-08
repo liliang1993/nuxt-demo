@@ -21,6 +21,12 @@
         >GitHub</a>
       </div>
     </div>
+    <el-pagination
+      :total="1000"
+      background
+      layout="prev, pager, next"
+
+    />
   </section>
 </template>
 

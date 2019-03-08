@@ -1,7 +1,7 @@
 <template>
     <div>
-        {{ $t('index.home') }}  
-        <button @click="handleSetLang">切换</button>  
+        {{ a }}  
+        <button @click="handleSetLang">{{$t($store.state.locale)}}</button>  
     </div>   
     
 </template>
@@ -25,9 +25,22 @@ import axios from 'axios';
             }
         })
     },
+    mounted() {
+        // console.log('this', this.$store.state.locale);
+        console.log('this', this);
+    },
     methods: {
         handleSetLang() {
             
+            if(this.$store.state.locale == 'cn') {
+                this.$store.commit('SET_LANG', 'en');
+                this.$i18n.locale = this.$store.state.locale;
+            }else {
+                console.log('999');
+                this.$store.commit('SET_LANG', 'cn');
+                this.$i18n.locale = this.$store.state.locale;
+            }
+             console.log('this.$store.state.locale', this.$store.state.locale);
         }  
     },
 }
